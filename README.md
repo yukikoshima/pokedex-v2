@@ -40,3 +40,14 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## 依存関係
+
+```
+--- @nuxtjs/eslint-config-typescript
+  |-- @typescript-eslint/eslint-plugin
+  |-- @typescript-eslint/parser
+  |-- @nuxtjs/eslint-config
+    |-- eslint-plugin-vue
+      |--vue-eslint-parser
+```
