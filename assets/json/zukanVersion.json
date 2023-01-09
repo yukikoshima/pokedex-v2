@@ -1,0 +1,38 @@
+{
+  "rgbp": {
+    "startNo": 1,
+    "endNo": 151
+  },
+  "gs": {
+    "startNo": 152,
+    "endNo": 251
+  },
+  "rs": {
+    "startNo": 252,
+    "endNo": 386
+  },
+  "dp": {
+    "startNo": 387,
+    "endNo": 493
+  },
+  "bw": {
+    "startNo": 494,
+    "endNo": 649
+  },
+  "xy": {
+    "startNo": 650,
+    "endNo": 721
+  },
+  "sm": {
+    "startNo": 722,
+    "endNo": 807
+  },
+  "pv": {
+    "startNo": 808,
+    "endNo": 809
+  },
+  "swsh": {
+    "startNo": 810,
+    "endNo": 898
+  }
+}

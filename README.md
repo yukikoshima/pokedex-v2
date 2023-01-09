@@ -51,3 +51,9 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     |-- eslint-plugin-vue
       |--vue-eslint-parser
 ```
+
+## npm ライブラリ
+
+```
+mitt: event busのため
+```
