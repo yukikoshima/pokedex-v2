@@ -37,7 +37,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
 import { useDisplay } from 'vuetify'
 // import { routeLists } from '@/assets/js/routeLists.js'
 

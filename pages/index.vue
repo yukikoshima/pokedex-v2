@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1>index.vue</h1>
-    <v-btn variant="elevated">ボタン</v-btn>
-  </div>
+  <Welcome />
 </template>
+
+<script setup lang="ts">
+import Welcome from '@/components/pages/index/Welcome.vue'
+</script>
