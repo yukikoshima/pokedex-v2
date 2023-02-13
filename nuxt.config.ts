@@ -32,10 +32,9 @@ export default defineNuxtConfig({
         )
       })
     },
-    '@nuxt/image-edge',
     '@nuxtjs/google-fonts',
   ],
-  css: ['vuetify/styles', '@mdi/font/css/materialdesignicons.css'],
+  css: ['vuetify/styles'],
   build: {
     transpile: ['vuetify'],
   },
