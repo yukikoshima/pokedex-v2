@@ -1,29 +1,38 @@
-type NameAndUrl = {
-  name: string | null
-  url: string | null
-}
+import { z } from 'zod'
 
-export type FlavorText = {
-  flavor_text: string | null
-  language: NameAndUrl
-  version: NameAndUrl
-}
+const nameSchema = z.object({
+  name: z.string().nullable(),
+  // url: z.string().nullable(),
+})
 
-export type Genera = {
-  genus: string | null
-  language: NameAndUrl
-}
+const flavorTextSchema = z.object({
+  flavor_text: z.string().nullable(),
+  language: nameSchema,
+  // version: nameSchema,
+})
+export type FlavorText = z.infer<typeof flavorTextSchema>
 
-export type Names = {
-  language: NameAndUrl
-  name: string | null
-}
+const generaSchema = z.object({
+  genus: z.string().nullable(),
+  language: nameSchema,
+})
+export type Genera = z.infer<typeof generaSchema>
 
-export type PokemonSpecies = {
-  flavor_text_entries: FlavorText[]
-  genera: Genera[]
-  id: number | null
-  names: Names[]
-}
+const namesSchema = z.object({
+  name: z.string().nullable(),
+  language: nameSchema,
+})
+export type Names = z.infer<typeof namesSchema>
+
+export const pokemonSpeciesSchema = z.object({
+  id: z.number().nullable(),
+  flavor_text_entries: z.array(flavorTextSchema),
+  genera: z.array(generaSchema),
+  names: z.array(namesSchema),
+})
+export type PokemonSpecies = z.infer<typeof pokemonSpeciesSchema>
+
+export const pokemonsSpeciesSchema = z.array(pokemonSpeciesSchema)
+export type PokemonsSpecies = z.infer<typeof pokemonsSpeciesSchema>
 
 export type T = FlavorText | Genera | Names

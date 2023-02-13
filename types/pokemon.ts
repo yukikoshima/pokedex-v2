@@ -1,17 +1,15 @@
 export type Type = {
-  [key: number]: {
-    name: string
-    link: string
-  }
+  name: string
+  link: string
 }
 
 export type PokemonInfo = {
-  id: number | undefined
-  img: string | undefined
-  typesJa: Type[] | undefined
-  name: string | undefined
-  genera: string | undefined
-  height: number | undefined
-  weight: number | undefined
-  flavorText: string | undefined
+  id: number | null
+  img: string | null
+  typesJa: Type[] | null
+  name: string | null
+  genera: string | null
+  height: number | null
+  weight: number | null
+  flavorText: string | null
 }

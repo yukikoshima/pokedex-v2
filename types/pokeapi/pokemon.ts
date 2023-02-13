@@ -1,28 +1,31 @@
-type Other = {
-  'official-artwork': {
-    front_default: string | null
-  }
-}
+import { z } from 'zod'
 
-type Sprites = {
-  other: Other
-}
+const ohterSchema = z.object({
+  'official-artwork': z.object({
+    front_default: z.string().nullable(),
+  }),
+})
 
-type NameAndUrl = {
-  name: string | null
-  url: string | null
-}
+const spritesSchema = z.object({
+  other: ohterSchema,
+})
 
-type Types = {
-  slot: number | null
-  type: NameAndUrl
-}
+const typesSchema = z
+  .object({
+    type: z.object({
+      name: z.string().nullable(),
+    }),
+  })
+  .array()
 
-export type Pokemon = {
-  id: number | null
-  name: string | null
-  sprites: Sprites
-  types: Types[]
-  height: number | null
-  weight: number | null
-}
+export const pokemonSchema = z.object({
+  id: z.number().nullable(),
+  sprites: spritesSchema,
+  types: typesSchema,
+  height: z.number().nullable(),
+  weight: z.number().nullable(),
+})
+export type Pokemon = z.infer<typeof pokemonSchema>
+
+export const pokemonsSchema = z.array(pokemonSchema)
+export type Pokemons = z.infer<typeof pokemonsSchema>

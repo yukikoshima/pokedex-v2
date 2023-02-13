@@ -7,11 +7,11 @@ type keys = keyof typeof pokemonType
 export default defineNuxtPlugin(() => {
   return {
     provide: {
-      toTypeJa(types: (string | null)[]): Type[] | undefined {
+      toTypeJa(types: (string | null)[]): Type[] | null {
         const stringTypes = types.filter(
           (type): type is string => typeof type === 'string'
         )
-        if (!stringTypes.length) return
+        if (!stringTypes.length) return null
 
         const typesJa: Type[] = []
         for (const type of stringTypes) {
@@ -20,19 +20,19 @@ export default defineNuxtPlugin(() => {
         }
         return typesJa
       },
-      convertToJa(array: T[]): string | undefined {
-        if (!array.length) return
+      convertToJa(array: T[]): string | null {
+        if (!array.length) return null
 
         const obj = array.find(v => v.language.name === 'ja-Hrkt')
 
-        if (!obj) return
+        if (!obj) return null
 
         if ('name' in obj) {
-          return obj.name || undefined
+          return obj.name || null
         } else if ('genus' in obj) {
-          return obj.genus || undefined
+          return obj.genus || null
         } else {
-          return obj.flavor_text || undefined
+          return obj.flavor_text || null
         }
       },
     },

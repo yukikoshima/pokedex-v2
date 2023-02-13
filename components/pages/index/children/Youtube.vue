@@ -15,7 +15,7 @@
         <p class="text-md-h5">youtubeで評価が高い動画</p>
         <v-row dense>
           <v-col
-            v-for="(url, i) in urls"
+            v-for="(youtube, i) in youtubes"
             :key="i"
             cols="12"
             lg="6"
@@ -27,8 +27,8 @@
               <img
                 :id="`youtube_${i}`"
                 ref="youtubeRefs"
-                :src="url"
-                :alt="url.name"
+                :src="youtube.url"
+                :alt="youtube.title"
                 loading="lazy"
                 @click="youtubePlay(i)"
               />
@@ -42,26 +42,18 @@
 
 <script setup lang="ts">
 const {
-  data: youtube,
+  data: youtubes,
   pending,
   error,
-} = await useFetch('/api/youtube/youtube', { pick: ['items'] })
-
-let urls: string[] = []
-let ids: string[] = []
-console.log(youtube.value)
-if (youtube.value) {
-  urls = youtube.value.items.map(v => v.snippet.thumbnails.medium.url)
-  ids = youtube.value.items.map(v => v.id.videoId)
-}
+} = await useFetch('/api/youtube/youtube')
 
 const youtubeRefs = ref([])
-const youtubePlay = (i: string) => {
-  const el = youtubeRefs.value[+i] as HTMLImageElement
+const youtubePlay = (i: number) => {
+  const el = youtubeRefs.value[i] as HTMLImageElement
 
-  if (!el) return
+  if (!youtubes.value) return
   el.outerHTML =
-    `<iframe src="https://www.youtube.com/embed/${ids[i]}"` +
+    `<iframe src="https://www.youtube.com/embed/${youtubes.value[i].videoId}"` +
     'title="YouTube video player" frameborder="0" allow="accelerometer;' +
     'autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
     'allowfullscreen></iframe>'
