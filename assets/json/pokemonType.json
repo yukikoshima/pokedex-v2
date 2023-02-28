@@ -1,0 +1,82 @@
+{
+  "normal": {
+    "name": "ノーマル",
+    "link": "normal.svg"
+  },
+  "fighting": {
+    "name": "かくとう",
+    "link": "fighting.svg"
+  },
+  "flying": {
+    "name": "ひこう",
+    "link": "flying.svg"
+  },
+  "poison": {
+    "name": "どく",
+    "link": "poison.svg"
+  },
+  "ground": {
+    "name": "じめん",
+    "link": "ground.svg"
+  },
+  "rock": {
+    "name": "いわ",
+    "link": "rock.svg"
+  },
+  "bug": {
+    "name": "むし",
+    "link": "bug.svg"
+  },
+  "ghost": {
+    "name": "ゴースト",
+    "link": "ghost.svg"
+  },
+  "steel": {
+    "name": "はがね",
+    "link": "steel.svg"
+  },
+  "fire": {
+    "name": "ほのお",
+    "link": "fire.svg"
+  },
+  "water": {
+    "name": "みず",
+    "link": "water.svg"
+  },
+  "grass": {
+    "name": "くさ",
+    "link": "grass.svg"
+  },
+  "electric": {
+    "name": "でんき",
+    "link": "electric.svg"
+  },
+  "psychic": {
+    "name": "エスパー",
+    "link": "psychic.svg"
+  },
+  "ice": {
+    "name": "こおり",
+    "link": "ice.svg"
+  },
+  "dragon": {
+    "name": "ドラゴン",
+    "link": "dragon.svg"
+  },
+  "dark": {
+    "name": "あく",
+    "link": "dark.svg"
+  },
+  "fairy": {
+    "name": "フェアリー",
+    "link": "fairy.svg"
+  },
+  "unknown": {
+    "name": "？？？",
+    "link": ""
+  },
+  "shadow": {
+    "name": "ダーク",
+    "link": ""
+  }
+}
