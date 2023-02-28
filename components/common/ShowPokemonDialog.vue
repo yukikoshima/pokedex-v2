@@ -24,7 +24,7 @@
                 max-width="40px"
                 class="ma-auto"
                 :alt="pokemon.name!"
-              ></v-img>
+              />
               <p>{{ type.name }}</p>
             </div>
           </template>

@@ -16,14 +16,14 @@
         <p>{{ pokemon.name }}</p>
       </v-col>
     </v-row>
-    <ShowDialog ref="showPokemon" />
+    <ShowPokemonDialog ref="showPokemon" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { PropType } from 'vue'
 import { PokemonInfo } from '@/types/pokemon'
-import ShowDialog from '@/components/common/ShowDialog.vue'
+import ShowPokemonDialog from '@/components/common/ShowPokemonDialog.vue'
 // TODO lazy-loadの対応
 defineProps({
   pokemons: {

@@ -77,9 +77,8 @@ const getPokemons = (pokemonUrls: string[], speciesUrls: string[]) => {
 
 const createPokemonData = () => {
   return (pokemons: Pokemons, species: PokemonsSpecies) => {
-    const { $convertToJa, $toTypeJa } = useNuxtApp()
-
     const pokemonsData: PokemonInfo[] = []
+
     for (let i = 0; i < pokemons.length; i++) {
       // id、画像、身長、体重、タイプを取得
       const id = pokemons[i].id || null
@@ -89,12 +88,12 @@ const createPokemonData = () => {
       const weight = pokemons[i].weight || null
       const types = pokemons[i].types.map(v => v.type.name)
       // 英語で返ってくるので日本語に変換
-      const typesJa = $toTypeJa(types)
+      const typesJa = toTypeJa(types)
       // 名前、種類、説明を取得
       // 英語で返ってくるので日本語に変換
-      const name = $convertToJa(species[i].names)
-      const genera = $convertToJa(species[i].genera)
-      const flavorText = $convertToJa(species[i].flavor_text_entries)
+      const name = convertToJa(species[i].names)
+      const genera = convertToJa(species[i].genera)
+      const flavorText = convertToJa(species[i].flavor_text_entries)
 
       pokemonsData.push({
         id,

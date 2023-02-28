@@ -1,25 +1,25 @@
 <template>
-  <v-app-bar app color="yellow" clipped-left flat height="70">
-    <v-btn @click="switchDrawer">
+  <v-app-bar color="yellow" flat height="70">
+    <v-btn class="ml-0" @click="switchDrawer">
       <v-icon :icon="mdiMenu" />
     </v-btn>
-    <div class="logo__header">
+    <div class="logo__header hidden-sm-and-down">
       <NuxtLink to="/">
-        <v-img class="hidden-sm-and-down" src="/img/logo.svg" alt="logo" />
+        <v-img src="/img/logo.svg" alt="logo" />
       </NuxtLink>
     </div>
-    <!-- <Search /> -->
-    <!-- <v-spacer /> -->
-    <!-- <ErrorSnackbar />
-    <Dialog /> -->
+    <PokemonSearch />
+    <v-spacer />
+    <ErrorSnackbar />
+    <ShowPokemonSearchDialog />
   </v-app-bar>
 </template>
 
 <script setup lang="ts">
-// import Search from '@/components/Search.vue'
-// import ErrorSnackbar from '@/components/Common/ErrorSnackbar.vue'
-// import Dialog from '@/components/Dialog.vue'
 import { mdiMenu } from '@mdi/js'
+import PokemonSearch from '@/components/common/PokemonSearch.vue'
+import ErrorSnackbar from '@/components/common/ErrorSnackbar.vue'
+import ShowPokemonSearchDialog from '@/components/common/ShowPokemonSearchDialog.vue'
 
 const switchDrawer = () => {
   const { $bus } = useNuxtApp()
