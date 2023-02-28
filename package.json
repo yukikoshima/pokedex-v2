@@ -20,6 +20,8 @@
     "vite-plugin-vuetify": "^1.0.1"
   },
   "dependencies": {
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.1.0",
     "mitt": "^3.0.0",
     "pokedex-promise-v2": "^4.1.0",
     "vuetify": "^3.1.0",

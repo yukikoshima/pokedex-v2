@@ -19,7 +19,8 @@
 import { FetchError } from 'ofetch'
 import PokemonCard from '@/components/pages/zukan/children/PokemonCard.vue'
 import { PokemonInfo } from '@/types/pokemon'
-// TODO vue3-無限ローディング　ライブラリを使うか
+import ZukanVer from '@/assets/json/zukanVersion.json'
+
 const {
   setId,
   setLastId,
@@ -31,8 +32,13 @@ const {
   createPokemonData,
 } = usePokemons()
 
-setId(1)
-setLastId(898)
+// バージョンのstartNoとlastNoを取得してセット
+const route = useRoute()
+const key = route.params.id as string
+
+const zukanVer = JSON.parse(JSON.stringify(ZukanVer))
+setId(zukanVer[key].startNo)
+setLastId(zukanVer[key].lastNo)
 
 const pokemons = ref<PokemonInfo[]>([])
 const isPending = ref(true)

@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <v-container app fluid>
+    <v-container fluid>
       <header class="text-center headline">
         <p class="shine text-lg-h2 text-md-h2 text-sm-h4 text-h6 pb-sm-6">
           ようこそポケモンあそびばへ

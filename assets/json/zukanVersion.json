@@ -1,38 +1,38 @@
 {
   "rgbp": {
     "startNo": 1,
-    "endNo": 151
+    "lastNo": 151
   },
   "gs": {
     "startNo": 152,
-    "endNo": 251
+    "lastNo": 251
   },
   "rs": {
     "startNo": 252,
-    "endNo": 386
+    "lastNo": 386
   },
   "dp": {
     "startNo": 387,
-    "endNo": 493
+    "lastNo": 493
   },
   "bw": {
     "startNo": 494,
-    "endNo": 649
+    "lastNo": 649
   },
   "xy": {
     "startNo": 650,
-    "endNo": 721
+    "lastNo": 721
   },
   "sm": {
     "startNo": 722,
-    "endNo": 807
+    "lastNo": 807
   },
   "pv": {
     "startNo": 808,
-    "endNo": 809
+    "lastNo": 809
   },
   "swsh": {
     "startNo": 810,
-    "endNo": 898
+    "lastNo": 898
   }
 }

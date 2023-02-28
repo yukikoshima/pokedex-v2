@@ -24,6 +24,7 @@
             xs="12"
           >
             <div class="youtube">
+              <!-- v-imgだと動画を読み込めない -->
               <img
                 :id="`youtube_${i}`"
                 ref="youtubeRefs"
